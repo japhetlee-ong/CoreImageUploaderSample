@@ -1,0 +1,21 @@
+﻿@model UserModel
+
+<div class="text-center">
+    @using (Html.BeginForm("Index", "Upload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+	    <div>
+            <h3>Image upload sample</h3>
+            <div style="text-align:center">
+                @Html.Label("Name")
+                @Html.TextBoxFor(Model => Model.Name, new { @class = "form-control", style = "margin:auto;", required = "required" })
+            </div>
+            <div style="text-align:center">
+                @Html.Label("Image")
+                @Html.TextBoxFor(Model => Model.UserImage, new { @class = "form-control", type="file", style = "margin:auto;", required = "required", accept=".png,.jpg" })
+            </div>
+            <div style="text-align:center">
+                <button class="btn btn-warning btn-block" style="margin-top:10px; width:50%">Login</button>
+            </div>
+        </div>
+	}
+</div>
